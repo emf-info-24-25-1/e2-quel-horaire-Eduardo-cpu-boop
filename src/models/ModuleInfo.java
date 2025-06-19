@@ -23,6 +23,7 @@ public class ModuleInfo {
 
     @Override
     public String toString() {
+        //MR Que se passe t'il si professeur est null ?
         return nom + " avec " + professeur.getNom();
     }
 

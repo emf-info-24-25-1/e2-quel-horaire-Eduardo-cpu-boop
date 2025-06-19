@@ -21,7 +21,9 @@ public class ServiceFormationMaitres {
         boolean tousModuleCouverts = false;
 
         for (int i = 0; i < profs.length; i++) {
+            //MR Cela sert à quoi de faire cette ligne?
             profs[i].getModulesEnseignes();
+            //MR Il faut plutôt utiliser la méthode enseigneDejaCeModule
             if (profs[i].getModulesEnseignes() == null) {
 
             }

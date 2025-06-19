@@ -5,8 +5,10 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class Bloc {
+    //MR Constante est également static
     public int NBRE_DEMI_JOURS_SEMAINE = 10;
     private final String nom;
+    //MR ModuleInfo peut également être final
     private ModuleInfo[] modules;
 
     public Bloc(String nom) {
@@ -24,6 +26,7 @@ public class Bloc {
         boolean estPlanifier = false;
         int nbrePlace = 0;
 
+        //MR Il aurait fallu contrôler qu'il y ait de le place
         for (int i = 0; i < modules.length; i++) {
             if (modules[i] != null) {
                 if (nbrePlace < 3) {
@@ -34,6 +37,7 @@ public class Bloc {
             estPlanifier = true;
         }
 
+        //MR Et ensuite rajouter le module. Là tu mets le module à null ???
         if (nbrePlace < 3) {
             for (int i = 0; i < modules.length; i++) {
                 if (modules[i] != null) {
@@ -71,6 +75,7 @@ public class Bloc {
         for (int i = 0; i < modules.length; i++) {
             if (modules[i].getNom().equals(module.getNom())) {
                 contientModule = true;
+                //MR Ici tu pourrais mettre un break
             }
 
         }

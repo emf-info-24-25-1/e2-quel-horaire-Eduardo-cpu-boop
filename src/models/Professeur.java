@@ -8,6 +8,7 @@ public class Professeur {
     public Professeur(String prenom, String nom) {
         this.nom = nom;
         this.prenom = prenom;
+        //MR Il faut créer un tableau tout de même de ModuleInfo mais de grandeur 0 (tableau dynamique)
         this.modulesEnseignes = null;
     }
 
@@ -17,6 +18,7 @@ public class Professeur {
         for (int i = 0; i < modulesEnseignes.length; i++) {
             if (modulesEnseignes[i].getNom() == nomDuModule) {
                 enseigneCeModule = true;
+                //MR Ici un petit break
             }
         }
         return enseigneCeModule;
@@ -37,6 +39,7 @@ public class Professeur {
     }
 
     public void viderModules() {
+        //MR Il faut obtenir un tableau de taille 0
         for (int i = 0; i < modulesEnseignes.length; i++) {
             if (modulesEnseignes[i] != null) {
                 modulesEnseignes[i] = null;

@@ -2,6 +2,7 @@ package models;
 
 public class Horaire {
     public final static int NBRE_DE_BLOC = 6;
+    //MR blocs pourrait être final
     private Bloc[] blocs;
 
     public Horaire() {
@@ -20,7 +21,9 @@ public class Horaire {
 
         for (int i = 0; i < modules.length; i++) {
             for (int j = 0; j < profs.length; j++) {
+                //MR Il faut utiliser uniquement la méthode getModulesEnseignes()
                 if (modules[i].getNom().equals(profs[j].getModulesEnseignes())) {
+                    //MR Ici il faut dire au module quel prof fera ce module
                     profs[j].ajouteModuleEnseigne(modules[i]);
                     break;
                 }
@@ -33,6 +36,7 @@ public class Horaire {
                 }
             }
         }
+        //MR Le est planifier n'utilise que celui de la planification, mais il faut rajouter le boolean si l'enseignant n'a 'as été affecté'
         return estPlanifier;
     }
 
